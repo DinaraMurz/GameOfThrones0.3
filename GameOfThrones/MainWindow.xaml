@@ -1,0 +1,40 @@
+﻿<Window x:Class="GeckoWpf.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        xmlns:local="clr-namespace:GeckoWpf"
+        mc:Ignorable="d"
+        Title="GeckoBrowser"
+        Height="400" Width="600" >
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="textBox" Foreground="WhiteSmoke" Grid.Column="0" Grid.Row="0" Background="#FF383838">Search</TextBox>
+
+        <!--<materialDesign:PackIcon Kind="Magnify" Grid.Row="1" Height="33" Width="33" Foreground="White"></materialDesign:PackIcon>-->
+        <TextBox x:Name="findTextBox" TextChanged="findTextBoxTextChanged" DataContextChanged="findTextBoxDataContextChanged" Grid.Row="1" Margin="30 0 0 0" Background="White"></TextBox>
+        <ListBox x:Name="peopleListBox" MouseDoubleClick="peopleListBoxMouseDoubleClick" Foreground="White" Grid.Row="2" Background="#FF5B5B5B"></ListBox>
+
+        <Grid
+        Grid.Column="1"
+        Name="GridWeb"
+        Loaded="Window_Loaded" Grid.RowSpan="2">
+        </Grid>
+    </Grid>
+</Window>
